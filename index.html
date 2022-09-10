@@ -4,8 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Checking leap year or prime number</title>
     <style>
+
+      :root{
+        --primary : #03b4db;
+        --secondary :#2433ce;
+      }
       * {
         margin: 0;
         padding: 0;
@@ -14,6 +22,21 @@
 
       html {
         font-size: 62.5%;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .navigation{
+        font-size: 2.5rem;
+        color: #fff;
+        padding: 1rem;
+        margin-bottom: 0.8rem;
+        background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+      }
+      
+
+      .flex-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
       }
 
       textarea {
@@ -22,24 +45,40 @@
         font-size: 3.5rem;
         display: block;
         margin: 3rem auto;
-        padding: 3rem;
+        padding: 2rem;
         font-family: inherit;
-        font-weight: 500;
+        font-weight: 400;
+        border-radius: 0.5rem;
       }
 
       .btn-check {
         font-family: inherit;
         display: block;
+        cursor: pointer;
+        color: #fff;
         margin: 2.5rem auto;
         padding: 1.5rem 3rem;
         font-size: 2rem;
-        font-weight: 700;
+        font-weight: 600;
         line-height: 3rem;
         letter-spacing: 0.1rem;
-        border-radius: 1rem;
+        border-radius: 0.5rem;
         border: none;
-        background-color: #fae04e;
-        box-shadow: 3px 3px #55491067;
+        background-color: var(--primary);
+        box-shadow: 3px 3px #03b3db2d;
+      }
+
+      .btn-chk1{
+        background-color: var(--secondary);
+        box-shadow: 4px 4px #2432ce21;
+      }
+
+      .output-details {
+        font-size: 2.3rem;
+        text-align: center;
+        font-weight: 500;
+        padding: 1rem;
+        
       }
 
       .output {
@@ -47,28 +86,41 @@
         height: 15rem;
         width: 70%;
         font-size: 3.5rem;
-        font-weight: 500;
+        font-weight: 400;
         display: block;
         margin: 3rem auto;
-        padding: 3rem;
+        padding: 2rem;
+        border-radius: 0.5rem;
       }
     </style>
   </head>
   <body>
     <header>
-      <nav class="navigation">Welcome</nav>
+      <nav class="navigation">Welcome </nav>
       <section class="flex-section">
         <div class="section1">
           <textarea
             class="input"
+            id="input1"
             placeholder="Please enter number in numeral values"
           ></textarea>
-          <button class="btn-check">Check</button>
+          <button id="btn-check1" class="btn-check">Check Prime</button>
 
           <div class="output-details">Result will come here 👇</div>
-          <div class="output"></div>
+          <div id="output1" class="output"></div>
         </div>
-        <div class="section2">B</div>
+        <div class="section2">
+          <textarea
+          id="input2"
+            class="input"
+            placeholder="Please enter Birthyear in numeral values"
+          ></textarea>
+          <button id="btn-check2" class="btn-check btn-chk1">Check Leap year</button>
+
+          <div class="output-details">Result will come here 👇</div>
+          <div id="output2" class="output"></div>
+        </div>
+        </div>
       </section>
     </header>
     <script src="app.js" type="text/javascript"></script>

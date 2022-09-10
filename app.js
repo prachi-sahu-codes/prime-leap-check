@@ -1,6 +1,6 @@
-const btnCheck = document.querySelector(".btn-check");
-const txtInput = document.querySelector(".input");
-const outputDiv = document.querySelector(".output");
+const btnCheck = document.querySelector("#btn-check1");
+const txtInput = document.querySelector("#input1");
+const outputDiv = document.querySelector("#output1");
 
 let isPrime;
 let isNotPrime;
@@ -35,3 +35,33 @@ const checkPrime = function () {
 };
 
 btnCheck.addEventListener("click", checkPrime);
+
+const btnCheck1 = document.querySelector("#btn-check2");
+const txtInput1 = document.querySelector("#input2");
+const outputDiv1 = document.querySelector("#output2");
+
+const checkLeap = function () {
+  outputDiv1.innerText = "";
+
+  let inputText1 = txtInput1.value;
+
+  inputText1 = Number(inputText1);
+
+  if (!isNaN(inputText1) && inputText1 < 2021 && inputText1 > 1000) {
+    isLeap = "This is a leap year";
+    isNotLeap = "This is not a leap year";
+
+    if (
+      (0 == inputText1 % 4 && 0 != inputText1 % 100) ||
+      0 == inputText1 % 400
+    ) {
+      outputDiv1.innerText = isLeap;
+    } else {
+      outputDiv1.innerText = isNotLeap;
+    }
+  } else {
+    outputDiv1.innerText = "Please enter a valid Birthyear in numerals!!";
+  }
+};
+
+btnCheck1.addEventListener("click", checkLeap);
